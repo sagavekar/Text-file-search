@@ -6,7 +6,8 @@ import os
 flag_found = 0
 
 def select_files():
-    files = filedialog.askopenfilenames(filetypes=[("Text Files", "*.txt")])
+    initial_dir = os.path.expanduser("~")  # Set initial directory to user's home directory
+    files = filedialog.askopenfilenames(initialdir=initial_dir, filetypes=[("Text Files", "*.txt")])
     file_list.delete(0, tk.END)  # Clear the existing list
     for file_path in files:
         file_name = os.path.basename(file_path)

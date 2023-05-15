@@ -8,7 +8,7 @@ import subprocess
 def select_files():
     
     initial_dir = os.path.expanduser("~")  # Set initial directory to user's home directory
-    files = filedialog.askopenfilenames(initialdir=initial_dir, filetypes=[("Text Files", "*.txt")])
+    files = filedialog.askopenfilenames(initialdir=initial_dir, filetypes=[("All files", "*")])
     file_list.delete(0, tk.END)  # Clear the existing list
     
     file_count = len(files)
@@ -84,13 +84,13 @@ file_list.pack(fill=tk.BOTH, expand=True)
 button_frame = tk.Frame(file_frame, bg="#F0F0F0")
 button_frame.pack(pady=3)
 
-select_button = tk.Button(button_frame, text="Select Files", command=select_files, font=("Arial", 11))
+select_button = tk.Button(button_frame,fg = "white",bg = "black", text="Select Files", command=select_files, font=("Arial", 11))
 select_button.pack(side=tk.LEFT, padx=9, pady=3)
 
-search_button = tk.Button(button_frame, text="Search", command=search_files, font=("Arial", 11))
+search_button = tk.Button(button_frame,fg = "white",bg = "black",text="Search", command=search_files, font=("Arial", 11))
 search_button.pack(side=tk.LEFT, padx=9, pady=3)
 
-Reset_button = tk.Button(button_frame, text="Reset", command=clear_all, font=("Arial", 11))
+Reset_button = tk.Button(button_frame,fg = "white",bg = "black", text="Reset", command=clear_all, font=("Arial", 11))
 Reset_button.pack(side=tk.LEFT, padx=9, pady=3)
 
 case_sensitive_var = tk.IntVar()
